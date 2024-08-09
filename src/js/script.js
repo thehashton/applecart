@@ -1,3 +1,4 @@
+import { products } from '../data/products.js';
 document.addEventListener("DOMContentLoaded", function () {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const checkoutCountElement = document.querySelector(".header__checkout-count");
