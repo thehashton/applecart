@@ -45,17 +45,8 @@
 </footer>
 
 <!-- JavaScript files -->
-<script>
-    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-        // Development environment
-        document.write('<script src="/src/data/products.js"><\/script>');
-        document.write('<script src="/src/js/script.js"><\/script>');
-    } else {
-        // Production environment
-        document.write('<script src="/dist/products.js"><\/script>');
-        document.write('<script src="/dist/script.js"><\/script>');
-    }
-</script>
+<script type="module" src="/src/data/products.js"></script>
+<script type="module" src="/src/js/script.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const yearSpan = document.getElementById("year");
