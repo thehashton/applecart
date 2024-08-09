@@ -82,5 +82,26 @@ const products = [
         price: 249.00,
         description: "Active Noise Cancellation, Transparency Mode, Wireless Charging Case.",
         image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=266&hei=291&fmt=png-alpha&.v=1632861342000"
+    },
+    {
+        id: 13,
+        name: "Apple Pencil (2nd Generation)",
+        price: 129.00,
+        description: "Compatible with iPad Pro and iPad Air.",
+        image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MU8F2?wid=266&hei=291&fmt=png-alpha&.v=1551489688005"
+    },
+    {
+        id: 14,
+        name: "AirTag",
+        price: 29.00,
+        description: "Keep track of your items and find them easily.",
+        image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-single-select-202104?wid=266&hei=291&fmt=png-alpha&.v=1617761671000"
+    },
+    {
+        id: 15,
+        name: "HomePod Mini",
+        price: 99.00,
+        description: "360-degree audio with Siri integration.",
+        image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-midnight-202407?wid=890&hei=890&fmt=jpeg&qlt=95&.v=1719351876219"
     }
 ];
