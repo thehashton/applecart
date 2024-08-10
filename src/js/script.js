@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartItemsElement = document.querySelector(".header__cart-items");
     const cartTotalElement = document.querySelector(".header__cart-total-amount");
     const productListElement = document.querySelector('.store__product-list');
+    const toastContainer = document.querySelector('.toast-container');
 
     // Function to render products
     function renderProducts(products) {
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 updateCart();
+                showToast(`${productName} added to basket`, 'success');
             });
         });
     }
@@ -98,12 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                     cart.splice(index, 1); // Remove item if quantity is 0
                 }
+                showToast(`${item.name} removed from basket`, 'error'); // Make sure 'item.name' is used here
                 updateCart();
             });
 
             // Remove item
             li.querySelector('.header__cart-item-remove').addEventListener('click', () => {
                 cart.splice(index, 1);
+                showToast(`${item.name} removed from basket`, 'error'); // Make sure 'item.name' is used here
                 updateCart();
             });
 
@@ -118,6 +122,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function clearCart() {
         cart = [];
         updateCart();
+        showToast(`Cleared entire basket`, 'error'); // Make sure 'item.name' is used here
+    }
+
+    // Function to show toast notifications
+    function showToast(message, type) {
+        const toast = document.createElement('div');
+        toast.className = `toast toast--${type} toast--visible`;
+        toast.textContent = message;
+
+        toastContainer.appendChild(toast);
+
+        // Remove the toast after a few seconds
+        setTimeout(() => {
+            toast.classList.remove('toast--visible');
+            toast.addEventListener('transitionend', () => toast.remove());
+        }, 3000);
     }
 
     // Show cart preview on hover
